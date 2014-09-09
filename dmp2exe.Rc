@@ -1,0 +1,18 @@
+#include "resource.h"
+#define IDC_OPEN                                             3000
+#define IDC_EXIT                                             3001
+#define IDC_FILENAME                                         3002
+#define IDC_FILESIZE                                         3003
+#define IDC_NBSECTION                                        3004
+#define IDC_CREXE                                            3005
+#define IDC_LSNAME                                           3006
+#define IDC_LSSIZE                                           3007
+#define IDC_EIP                                              3008
+#define IDC_IMPORT                                           3009
+#define IDC_LIST                                             3010
+#define IDC_ATEND                                            3011
+#define IDC_STATIC                                     -1
+#include <Res\dmp2exeDlg.rc>
+
+1 ICON MOVEABLE PURE LOADONCALL DISCARDABLE "MAINICON.ICO"
+CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST "dmp2exe.exe.manifest" 

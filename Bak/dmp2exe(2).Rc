@@ -1,0 +1,48 @@
+#include "resource.h"
+
+#define IDC_OPEN                                             3000
+#define IDC_EXIT                                             3001
+#define IDC_FILENAME                                         3002
+#define IDC_FILESIZE                                         3003
+#define IDC_NBSECTION                                        3004
+#define IDC_CREXE                                            3005
+#define IDC_LSNAME                                           3006
+#define IDC_LSSIZE                                           3007
+#define IDC_EIP                                              3008
+#define IDC_IMPORT                                           3009
+#define IDC_LIST                                             3010
+#define IDC_ATEND                                            3011
+
+#define IDC_STATIC                                     -1
+
+1 ICON MOVEABLE PURE LOADONCALL DISCARDABLE "MAINICON.ICO"
+CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST "dmp2exe.exe.manifest" 
+
+SVDialog DIALOG DISCARDABLE  0, 0, 191, 138
+STYLE 0x0004 | DS_CENTER | WS_CAPTION | WS_MINIMIZEBOX | WS_SYSMENU | WS_VISIBLE | WS_OVERLAPPED | DS_MODALFRAME | DS_3DLOOK
+CLASS "DLGCLASS"
+CAPTION "Dump to Exe V2.2 by SV (asm)"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Open",IDC_OPEN,5,121,50,14,BS_FLAT
+    PUSHBUTTON      "Quit",IDC_EXIT,137,121,50,14,BS_FLAT
+    PUSHBUTTON      "Create Exe",IDC_CREXE,71,121,50,14,BS_FLAT | 
+                    WS_DISABLED
+    EDITTEXT        IDC_FILENAME,37,9,149,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "FileName",IDC_STATIC,5,10,29,8
+    EDITTEXT        IDC_FILESIZE,38,25,59,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "FileSize",IDC_STATIC,9,27,26,8
+    EDITTEXT        IDC_NBSECTION,166,25,20,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Nb Section",IDC_STATIC,127,27,35,8
+    GROUPBOX        "File Info",IDC_STATIC,2,0,189,59
+    EDITTEXT        IDC_EIP,38,42,34,12,ES_AUTOHSCROLL | WS_DISABLED
+    LTEXT           "EIP",IDC_STATIC,21,44,13,8
+    EDITTEXT        IDC_IMPORT,142,42,34,12,ES_AUTOHSCROLL | WS_DISABLED
+    LTEXT           "Import RVA",IDC_STATIC,101,44,36,8
+    GROUPBOX        "",IDC_STATIC,2,115,189,23
+    LISTBOX         IDC_LIST,2,72,189,61,WS_VSCROLL
+    LTEXT           "Name       Virt.Size      Virt.Offs    Raw Size    Raw Offs",
+                    IDC_STATIC,6,63,179,8
+    GROUPBOX        "",IDC_STATIC,1,57,190,15
+    PUSHBUTTON      "",IDC_ATEND,179,42,7,12
+END

@@ -1,0 +1,4 @@
+This utility can do a valid exe
+from a dumped process.
+The dump file must be valid in size
+and PE Header.
